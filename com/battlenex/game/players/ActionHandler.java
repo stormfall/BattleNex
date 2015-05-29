@@ -19,9 +19,12 @@ public class ActionHandler {
 		c.clickObjectType = 0;
 		// c.sendMessage("Object type: " + objectType);
 		switch (objectType) {
-		case 8978:
+		case 8987:
 			if (c.tutorial == 4) {
-				c.sendMessage("You teleport to home");
+				c.sendMessage("Thank you for completeing the tutorial, here is your starter.");
+				c.tutorial = 5;
+				c.getPA().movePlayer(3087, 3500, 0);
+				c.addStarter();
 			} else {
 				c.sendMessage("You should finish the tutorial before using this portal");
 			}
@@ -901,7 +904,10 @@ public class ActionHandler {
 			c.getDH().sendDialogues(71, i);
 			} else if (c.tutorial == 1) {
 			c.getDH().sendDialogues(75, i);
-			} else if (c.tutorial >= 3) {
+			} else if (c.tutorial <= 3) {
+				c.getDH().sendDialogues(77, 945);
+				c.tutorial = 4;
+			} else if (c.tutorial == 4) {
 				c.getDH().sendDialogues(78, 945);
 			}
 			break;

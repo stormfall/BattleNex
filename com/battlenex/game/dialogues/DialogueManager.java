@@ -56,9 +56,9 @@ public class DialogueManager {
                 c.getPA().Tutorial(75);
 				c.Unclosable = 1;
 				break;
-			case 77:
+			case 77:                
+				c.tutorial = 4;
 				sendNpcChat3("*laughing* You probably thought you were gonna die!!", "I'm glad you didn't and my prank is over.", "You can use the portal now.", 945, "BattleNex Guide");
-                c.tutorial = 4;
                 c.getPA().Tutorial(100);
 				c.Unclosable = 1;
 				break;
@@ -66,6 +66,7 @@ public class DialogueManager {
 				sendNpcChat3("What are you still doing here?", "Leave before I get annoyed and", "decide to kill you!.", 945, "BattleNex Guide");
 				c.nextChat = 0;
                 break;
+                
         }
 
 
