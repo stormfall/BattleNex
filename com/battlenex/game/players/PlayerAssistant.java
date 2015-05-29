@@ -2494,7 +2494,7 @@ public class PlayerAssistant {
 	}
 
 	public void handleGlory(int gloryId) {
-		c.getDH().sendOption4("Edgeville", "Al Kharid", "Karamja");
+		c.getDH().sendOption4("Edgeville", "Al Kharid", "Karamja", "Draynor");
 		c.usingGlory = true;
 	}
 

@@ -309,13 +309,12 @@ public class Client extends Player {
 			}
 			if (Constants.musicEnabled) {
 				getPlayList().fixAllColors();
-			}	
-			if (addStarter)
-				getPA().addStarter();
-			if (autoRet == 1)
+			}
+			if (autoRet == 1) {
 				getPA().sendFrame36(172, 1);
-			else
-				getPA().sendFrame36(172, 0);	
+			} else {
+				getPA().sendFrame36(172, 0);
+			}
 		}
 	}
 	

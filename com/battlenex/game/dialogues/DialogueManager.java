@@ -14,49 +14,46 @@ public class DialogueManager {
     public void sendDialogues(int dialogue, int npcId) {
         c.talkingNpc = npcId;
         switch (dialogue) {
+        case 0:
+            c.talkingNpc = -1;
+            c.getPA().removeAllWindows();
+            c.nextChat = 0;
+            break;
 			case 71:
-				sendStatement("Welcome to BattleNex, you are about to begin the tutorial!");
-                c.nextChat = 72;
-                c.getPA().Tutorial(0);
-				c.Unclosable = 1;
-			case 73:
-				sendStatement("Go talk to the TUTOR? to begin your tutorial");
-                c.nextChat = 2;
-                c.getPA().Tutorial(0);
-				c.Unclosable = 1;
-				break;
-			case 2:
-				sendNpcChat3("Hello "+c.playerName+" welcome to BattleNex", "If you want to play in this server I need", "your help with something first.", c.talkingNpc, "TUTOR?");
-                c.nextChat = 3;
-                c.getPA().Tutorial(5);
-				c.Unclosable = 1;
-				break;
-            case 3:
-                sendOption2("Yes I'll help!", "No please let me skip tutorial.");
-                c.dialogueAction = 20000;
-                c.getPA().Tutorial(5);
+				sendNpcChat1("Welcome to BattleNex, you are about to begin the tutorial.", 945, "BattleNex Guide");
+				c.nextChat = 72;
+                c.getPA().Tutorial(3);
 				c.Unclosable = 1;
                 break;
-			case 4:
-				sendNpcChat2("Well bad news prick, you have to help me.", "It'll take a minute so get ready!", c.talkingNpc, "TUTOR?");
-                c.nextChat = 6;
-                c.getPA().Tutorial(10);
-				c.Unclosable = 1;
-			case 5: 
-				sendNpcChat2("Why thank you so much, I'll make it easy.", "This will take a second!", c.talkingNpc, "TUTOR?");
-                c.nextChat = 6;
-                c.getPA().Tutorial(10);
+			case 72:
+				sendNpcChat3("Hello "+c.playerName+" welcome to BattleNex", "If you want to play in this server I need", "your help with something first.", 945, "BattleNex Guide");
+                c.nextChat = 73;
+                c.getPA().Tutorial(5);
 				c.Unclosable = 1;
 				break;
+            case 73:
+                sendPlayerChat1("Sure... If you really need the help.");
+                c.nextChat = 74;
+                c.getPA().Tutorial(10);
+				c.Unclosable = 1;
+                break;
+			case 74:
+				sendNpcChat3("Thanks "+c.playerName+"! It'll just take a second", "Somewhere on this island, there is a chest", "with items in it! Find it and it's yours!", 945, "BattleNex Guide");
+                c.nextChat = 0;
+                c.getPA().Tutorial(15);
+				c.Unclosable = 1;
+				break;
+				/*
 			case 6:
 				sendNpcChat3("There is a treasure chest just DIRECTION of here.", "I need you to find it and open it and collect all of the", "items in it, ACTION them and then come back.", c.talkingNpc, "TUTOR?");
                 c.nextChat = 7;
-                c.getPA().Tutorial(20);
+                c.getPA().Tutorial(25);
+				c.Unclosable = 1;
 				break;
 			case 7:
 				c.getPA().Tutorial(35);
 				break;
-            
+				*/
         }
 
 

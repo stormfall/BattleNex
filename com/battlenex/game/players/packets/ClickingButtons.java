@@ -46,9 +46,12 @@ public class ClickingButtons implements PacketType {
 				c.sendMessage("You can't do that now.");
 			return;
 		}
-		
-			c.sendMessage(c.playerName + " - actionbutton: " + actionButtonId);
+
+        c.sendMessage("Actionbutton: " + actionButtonId + " Fight mode: " + c.fightMode + " Dialogue action: " + c.dialogueAction);
 		switch (actionButtonId) {
+		case 83097:
+			c.getPA().showInterface(19500);
+			break;
 		case 118098:
 			c.getPA().castVeng();
 		break;
@@ -60,7 +63,7 @@ public class ClickingButtons implements PacketType {
 				if (c.expCounter == 0) {
 					return;
 				}
-				c.getDH().sendDialogues(62);
+				c.getDH().sendDialogues(62, 62);
 				break;
 		}
 			
@@ -123,9 +126,6 @@ public class ClickingButtons implements PacketType {
 
 		// 2nd tele option
 		case 9191:
-			if (c.dialogueAction == 83) {
-				c.getDH().sendDialogues(84, 945);
-			}
 			if (c.teleAction == 1) {
 				// tav dungeon
 				c.getPA().spellTeleport(2884, 9798, 0);
@@ -432,7 +432,6 @@ public class ClickingButtons implements PacketType {
 			break;
 				//1st option click
 		case 9157:// barrows tele to tunnels
-			
 			if (c.dialogueAction == 1) {
 				int r = 4;
 				// int r = Misc.random(3);

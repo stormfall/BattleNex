@@ -31,10 +31,9 @@ public abstract class Player {
 	public long lastCast = 0;
 
     /* Tutorial Variables */
-    public boolean DoingTut = false;
+    public boolean finishedTut = false;
+	public int tutorial = 0;
 	public int Unclosable = 0;
-    public boolean TutorialStart = false;
-    public boolean TutorialDone = false;
     
 	public int getLocalX() {
            return getX() - 8 * getMapRegionX();
@@ -441,7 +440,6 @@ public abstract class Player {
 	public static int interfaceId;
 	public int XremoveSlot, XinterfaceID, XremoveID, Xamount;
 
-	public int tutorial = 15;
 	public boolean usingGlory = false;
 	public int[] woodcut = new int[3];
 	public int wcTimer = 0;

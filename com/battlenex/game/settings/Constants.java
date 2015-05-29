@@ -151,8 +151,8 @@ public class Constants {
 	/**
 	 * Starting and respawn locations of the player.
 	 */
-	public static final int START_LOCATION_X = 3093;
-	public static final int START_LOCATION_Y = 3110;
+	public static final int START_LOCATION_X = 2530;
+	public static final int START_LOCATION_Y = 4775;
 	public static final int RESPAWN_X = 3087;
 	public static final int RESPAWN_Y = 3500;
 	public static final int DUELING_RESPAWN_X = 3362;

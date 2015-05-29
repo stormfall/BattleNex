@@ -18,6 +18,10 @@ public class Walking implements PacketType {
 			if (c.followId > 0 || c.followId2 > 0)
 				c.getPA().resetFollow();
 		}
+
+		if (c.Unclosable != 1) {
+			c.getPA().removeAllWindows();
+		}
 		c.getPA().removeAllWindows();
 		if (c.duelRule[1] && c.duelStatus == 5) {
 			if (PlayerHandler.players[c.duelingWith] != null) {

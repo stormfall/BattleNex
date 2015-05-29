@@ -1,8 +1,5 @@
 package com.battlenex.game;
 
-import net.sf.javainetlocator.InetAddressLocator;
-import net.sf.javainetlocator.InetAddressLocatorException;
-
 public class Address {
 	
 	private String address;
@@ -10,11 +7,11 @@ public class Address {
 
 	public Address(String address) {
 		this.address = address;
-		try {
-			this.countryOfOrigin = InetAddressLocator.getLocale(address).getDisplayCountry();
-		} catch (InetAddressLocatorException ex) {
-			this.countryOfOrigin = "Unknown";
-		}
+		//try {
+			//this.countryOfOrigin = InetAddressLocator.getLocale(address).getDisplayCountry();
+		//} catch (InetAddressLocatorException ex) {
+			//this.countryOfOrigin = "Unknown";
+	//	}
 		if (this.countryOfOrigin.equals(null) || this.countryOfOrigin.equals("**") || this.countryOfOrigin.equals("")) {
 			this.countryOfOrigin = "Unknown";
 		}

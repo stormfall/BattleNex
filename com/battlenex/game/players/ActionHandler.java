@@ -875,7 +875,7 @@ public class ActionHandler {
 			break;
 
 		case 945:
-			c.getDH().sendDialogues(70, i);
+			c.getDH().sendDialogues(71, i);
 			break;
 		
 		case 706:
