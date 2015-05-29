@@ -19,6 +19,20 @@ public class ActionHandler {
 		c.clickObjectType = 0;
 		// c.sendMessage("Object type: " + objectType);
 		switch (objectType) {
+		case 13617: //monster portal
+			c.getDH().sendDialogues(3, 162);
+			break;
+		case 13618: //boss portal
+			c.getDH().sendDialogues(4, 162);
+			break;
+		case 13619: //minigame portal
+			c.getDH().sendDialogues(6, 162);
+			break;
+		case 13620: //skilling1
+			c.getDH().sendDialogues(1, 162);
+			break;
+		case 13621: //skilling2
+			break;
 		case 8987:
 			if (c.tutorial == 4) {
 				c.sendMessage("Thank you for completeing the tutorial, here is your starter.");
