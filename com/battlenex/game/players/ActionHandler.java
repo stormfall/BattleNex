@@ -19,6 +19,28 @@ public class ActionHandler {
 		c.clickObjectType = 0;
 		// c.sendMessage("Object type: " + objectType);
 		switch (objectType) {
+		case 8978:
+			if (c.tutorial == 4) {
+				c.sendMessage("You teleport to home");
+			} else {
+				c.sendMessage("You should finish the tutorial before using this portal");
+			}
+			break;
+		case 4111:
+			if (c.tutorial == 0) {
+			c.tutorial = 1;
+			c.sendMessage("You have collected the items from the chest, go talk to the guide!");
+			c.getItems().addItem(1155, 1);
+			c.getItems().addItem(1117, 1);
+			c.getItems().addItem(1075, 1);
+			c.getItems().addItem(1189, 1);
+			c.getItems().addItem(1277, 1);
+			c.getItems().addItem(379, 1);
+			c.getItems().addItem(1189, 1);
+			} else {
+				c.sendMessage("Maybe I should talk to the guide");
+			}
+			break;
 		case 2492:
 			if (c.killCount >= 20) {
 				c.getDH().sendOption4("Armadyl", "Bandos", "Saradomin", "Zamorak");
@@ -875,7 +897,13 @@ public class ActionHandler {
 			break;
 
 		case 945:
+			if (c.tutorial == 0) {
 			c.getDH().sendDialogues(71, i);
+			} else if (c.tutorial == 1) {
+			c.getDH().sendDialogues(75, i);
+			} else if (c.tutorial >= 3) {
+				c.getDH().sendDialogues(78, 945);
+			}
 			break;
 		
 		case 706:

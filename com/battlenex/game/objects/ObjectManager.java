@@ -101,6 +101,7 @@ public class ObjectManager {
 		c.getPA().checkObjectSpawn(409, 3091, 3506, 2, 10);
 		c.getPA().checkObjectSpawn(2213, 3047, 9779, 1, 10);
 		c.getPA().checkObjectSpawn(2213, 3080, 9502, 1, 10);
+		c.getPA().checkObjectSpawn(4111, 2522, 4768, 0, 10); //tut chest
 		if (c.heightLevel == 0)
 			c.getPA().checkObjectSpawn(2492, 2911, 3614, 1, 10);
 		else

@@ -22,38 +22,50 @@ public class DialogueManager {
 			case 71:
 				sendNpcChat1("Welcome to BattleNex, you are about to begin the tutorial.", 945, "BattleNex Guide");
 				c.nextChat = 72;
-                c.getPA().Tutorial(3);
+                c.getPA().Tutorial(10);
 				c.Unclosable = 1;
                 break;
 			case 72:
 				sendNpcChat3("Hello "+c.playerName+" welcome to BattleNex", "If you want to play in this server I need", "your help with something first.", 945, "BattleNex Guide");
                 c.nextChat = 73;
-                c.getPA().Tutorial(5);
+                c.getPA().Tutorial(15);
 				c.Unclosable = 1;
 				break;
             case 73:
                 sendPlayerChat1("Sure... If you really need the help.");
                 c.nextChat = 74;
-                c.getPA().Tutorial(10);
+                c.getPA().Tutorial(25);
 				c.Unclosable = 1;
                 break;
 			case 74:
 				sendNpcChat3("Thanks "+c.playerName+"! It'll just take a second", "Somewhere on this island, there is a chest", "with items in it! Find it and it's yours!", 945, "BattleNex Guide");
                 c.nextChat = 0;
-                c.getPA().Tutorial(15);
+                c.getPA().Tutorial(45);
 				c.Unclosable = 1;
 				break;
-				/*
-			case 6:
-				sendNpcChat3("There is a treasure chest just DIRECTION of here.", "I need you to find it and open it and collect all of the", "items in it, ACTION them and then come back.", c.talkingNpc, "TUTOR?");
-                c.nextChat = 7;
-                c.getPA().Tutorial(25);
+			case 75:
+				sendNpcChat3("If you haven't already, equip the gear you got,", "because you're going to need it!", "MWUAHAHAHA", 945, "BattleNex Guide");
+                c.nextChat = 76;
+                c.tutorial = 2;
+                c.getPA().Tutorial(60);
 				c.Unclosable = 1;
 				break;
-			case 7:
-				c.getPA().Tutorial(35);
+			case 76:
+				Server.npcHandler.spawnNpc(c, 3493, c.getX(), c.getY() - 1, 0, 1, 3, 1, 1, 1, true, true);
+				c.tutorial = 3;
+                c.getPA().Tutorial(75);
+				c.Unclosable = 1;
 				break;
-				*/
+			case 77:
+				sendNpcChat3("*laughing* You probably thought you were gonna die!!", "I'm glad you didn't and my prank is over.", "You can use the portal now.", 945, "BattleNex Guide");
+                c.tutorial = 4;
+                c.getPA().Tutorial(100);
+				c.Unclosable = 1;
+				break;
+			case 78:
+				sendNpcChat3("What are you still doing here?", "Leave before I get annoyed and", "decide to kill you!.", 945, "BattleNex Guide");
+				c.nextChat = 0;
+                break;
         }
 
 
