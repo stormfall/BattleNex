@@ -19,6 +19,44 @@ public class DialogueManager {
             c.getPA().removeAllWindows();
             c.nextChat = 0;
             break;
+            /*Start Of Portals*/
+        case 1:
+            //Skilling Portal 1
+            sendOption4("Skillzone", "Agility", "Fishing/Cooking", "Next");
+            c.dialogueAction = 1;
+            break;
+        case 2:
+            //Skilling Portal 2
+            sendOption4("Runecrafting", "Farming", "", "");
+            c.dialogueAction = 2;
+            break;
+        case 3:
+            //Trainning Portal 1
+            sendOption5("Rock Crabs", "Experiments", "", "", "");
+            c.dialogueAction = 3;
+            break;
+        case 4:
+            //Boss Portal 1
+            sendOption5("King Black Dragon - @gre@Safe", "Corporeal Beast - @gre@Safe", "Dagannoth Kings - @gre@Safe", "Chaos Element - @red@Danger",  "Next");
+            c.dialogueAction = 4;
+            break;
+        case 5:
+            //Boss Portal 2
+            sendOption5("Godwars Dungeon", "Tormented Demons", "Revenants - @red@Danger", "Wildywrym - @red@Danger", "Next");
+            c.dialogueAction = 5;
+            break;
+        case 6:
+            //Minigame Portal 1
+            sendOption5("Pest Control", "Barrows", "Castle Wars", "Duel Arena", "Coming Soon!");
+            c.dialogueAction = 6;
+            break;
+        case 7:
+            //Pk Portal 1
+            sendOption5("Edgeville", "12?", "19?", "Mage Bank", "Next");
+            c.dialogueAction = 7;
+            break;
+            /*End Of Portals*/
+            /* Start of Tutorial Island */
 			case 71:
 				sendNpcChat1("Welcome to BattleNex, you are about to begin the tutorial.", 945, "BattleNex Guide");
 				c.nextChat = 72;
@@ -51,7 +89,7 @@ public class DialogueManager {
 				c.Unclosable = 1;
 				break;
 			case 76:
-				Server.npcHandler.spawnNpc(c, 3493, c.getX(), c.getY() - 1, 0, 1, 3, 1, 1, 1, true, true);
+				Server.npcHandler.spawnNpc(c, 3493, c.getX(), c.getY() - 1, 0, 1, 10, 1, 1, 1, true, true);
 				c.tutorial = 3;
                 c.getPA().Tutorial(75);
 				c.Unclosable = 1;
@@ -66,8 +104,8 @@ public class DialogueManager {
 				sendNpcChat3("What are you still doing here?", "Leave before I get annoyed and", "decide to kill you!.", 945, "BattleNex Guide");
 				c.nextChat = 0;
                 break;
-                
         }
+        /* End of Tutorial Island */
 
 
 

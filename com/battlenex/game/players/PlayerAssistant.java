@@ -1,5 +1,6 @@
 package com.battlenex.game.players;
 
+import com.battlenex.Connection;
 import com.battlenex.Server;
 import com.battlenex.clip.region.Region;
 import com.battlenex.game.Client;
@@ -2564,6 +2565,7 @@ public class PlayerAssistant {
 	}
 
 	public void addStarter() {
+		if (!Connection.hasRecieved1stStarter(Server.playerHandler.players[c.playerId].connectedFrom)) {
 		c.getItems().addItem(995, 100000);
 		c.getItems().addItem(1731, 1);
 		c.getItems().addItem(554, 200);
@@ -2575,6 +2577,27 @@ public class PlayerAssistant {
 		c.getItems().addItem(841, 1);
 		c.getItems().addItem(882, 500);
 		c.getItems().addItem(380, 100);
+		Connection.addIpToStarterList1(Server.playerHandler.players[c.playerId].connectedFrom);
+		Connection.addIpToStarter1(Server.playerHandler.players[c.playerId].connectedFrom);
+		c.sendMessage("You have recieved 1 out of 2 starter packages on this IP address.");
+	} else if (Connection.hasRecieved1stStarter(Server.playerHandler.players[c.playerId].connectedFrom) && !Connection.hasRecieved2ndStarter(Server.playerHandler.players[c.playerId].connectedFrom)) {
+		c.getItems().addItem(995, 100000);
+		c.getItems().addItem(1731, 1);
+		c.getItems().addItem(554, 200);
+		c.getItems().addItem(555, 200);
+		c.getItems().addItem(556, 200);
+		c.getItems().addItem(558, 600);
+		c.getItems().addItem(1381, 1);
+		c.getItems().addItem(1323, 1);
+		c.getItems().addItem(841, 1);
+		c.getItems().addItem(882, 500);
+		c.getItems().addItem(380, 100);
+		Connection.addIpToStarterList2(Server.playerHandler.players[c.playerId].connectedFrom);
+		Connection.addIpToStarter2(Server.playerHandler.players[c.playerId].connectedFrom);
+		c.sendMessage("You have recieved 2 out of 2 starter packages on this IP address.");
+		} else if (Connection.hasRecieved1stStarter(Server.playerHandler.players[c.playerId].connectedFrom) && Connection.hasRecieved2ndStarter(Server.playerHandler.players[c.playerId].connectedFrom)) {
+		c.sendMessage("You have already recieved 2 starters!");
+	}	
 	}
 
 	public int getWearingAmount() {

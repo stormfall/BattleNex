@@ -16,7 +16,8 @@ public class Connection {
 	public static ArrayList<String> mutedIps = new ArrayList<String>();
 	public static ArrayList<String> mutedNames = new ArrayList<String>();
 	public static ArrayList<String> loginLimitExceeded = new ArrayList<String>();
-
+	public static ArrayList <String>firstGotten1 = new ArrayList<String> ();
+	public static ArrayList <String>secondGotten2 = new ArrayList<String> ();
 	/**
 	 * Adds the banned usernames and ips from the text file to the ban list
 	 **/
@@ -25,8 +26,92 @@ public class Connection {
 		banIps();
 		muteUsers();
 		muteIps();
+		appendStarters();
+		appendStarters2();
+	}
+	public static void appendStarters() {
+		try {
+			BufferedReader in = new BufferedReader(new FileReader("./Data/starters/FirstStarterRecieved.txt"));
+			String data = null;
+			try {
+				while ((data = in.readLine()) != null) {
+					firstGotten1.add(data);
+				}
+			} finally {
+				in.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
+	public static void appendStarters2() {
+		try {
+			BufferedReader in = new BufferedReader(new FileReader("./Data/starters/SecondStarterRecieved.txt"));
+			String data = null;
+			try {
+				while ((data = in.readLine()) != null) {
+					secondGotten2.add(data);
+				}
+			} finally {
+				in.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+        public static void addIpToStarter1(String IP) {
+		firstGotten1.add(IP);
+		addIpToStarterList1(IP);
+	}
+
+	public static void addIpToStarter2(String IP) {
+		secondGotten2.add(IP);
+		addIpToStarterList2(IP);
+	}
+
+	public static void addIpToStarterList1(String Name) {
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/starters/FirstStarterRecieved.txt", true));
+		    try {
+				out.newLine();
+				out.write(Name);
+		    } finally {
+				out.close();
+		    }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void addIpToStarterList2(String Name) {
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/starters/SecondStarterRecieved.txt", true));
+		    try {
+				out.newLine();
+				out.write(Name);
+		    } finally {
+				out.close();
+		    }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+       public static boolean hasRecieved1stStarter(String IP) {
+		if(firstGotten1.contains(IP)) {
+			return true;
+		}
+		return false;
+	}
+
+	public static boolean hasRecieved2ndStarter(String IP) {
+		if(secondGotten2.contains(IP)) {
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * Adding Name To List
 	 */

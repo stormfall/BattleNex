@@ -24,7 +24,7 @@ public class ActionHandler {
 				c.sendMessage("Thank you for completeing the tutorial, here is your starter.");
 				c.tutorial = 5;
 				c.getPA().movePlayer(3087, 3500, 0);
-				c.addStarter();
+				c.getPA().addStarter();
 			} else {
 				c.sendMessage("You should finish the tutorial before using this portal");
 			}

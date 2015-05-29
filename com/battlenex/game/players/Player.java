@@ -42,11 +42,6 @@ public abstract class Player {
   	public int getLocalY() {
            return getY() - 8 * getMapRegionY();
   	}
-  	public void addStarter() {
-  		c.getItems().addItem(995, 10000000); //10m
-        c.getItems().addItem(757, 1);
-        c.getItems().addItem(6767, 1);
-  	}
 	public boolean initialized = false, disconnected = false,
 			ruleAgreeButton = false, RebuildNPCList = false, isActive = false,
 			isKicked = false, isSkulled = false, friendUpdate = false,
