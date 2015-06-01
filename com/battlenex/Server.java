@@ -23,6 +23,7 @@ import com.battlenex.game.minigames.CastleWars;
 import com.battlenex.game.minigames.FightCaves;
 import com.battlenex.game.minigames.FightPits;
 import com.battlenex.game.minigames.PestControl;
+import com.battlenex.game.minigames.TriviaBot;
 import com.battlenex.game.npcs.NPCDrops;
 import com.battlenex.game.npcs.NPCHandler;
 import com.battlenex.game.npcs.NPCSpawns;
@@ -215,6 +216,8 @@ public class Server {
 					.println("Players online: " + PlayerHandler.playerCount
 							+ ", engine load: "
 							+ debugPercentFormat.format(engineLoad));
+			//Uses the system's cycle to yell the question.
+			TriviaBot.askQuestion();
 			totalCycleTime = 0;
 			cycles = 0;
 			System.gc();

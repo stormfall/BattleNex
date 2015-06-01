@@ -62,7 +62,7 @@ public abstract class Player {
 			followId, skullTimer, votingPoints, nextChat = 0, talkingNpc = -1,
 			dialogueAction = 0, autocastId, followDistance, followId2,
 			barrageCount = 0, delayedDamage = 0, delayedDamage2 = 0,
-			pcPoints = 0, magePoints = 0, desertTreasure = 0,
+			pcPoints = 0, triviaPoints = 0, magePoints = 0, desertTreasure = 0,
 			lastArrowUsed = -1, clanId = -1, autoRet = 0, pcDamage = 0,
 			xInterfaceId = 0, xRemoveId = 0, xRemoveSlot = 0, tzhaarToKill = 0,
 			tzhaarKilled = 0, waveId, frozenBy = 0, poisonDamage = 0,

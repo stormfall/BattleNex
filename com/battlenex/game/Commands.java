@@ -10,6 +10,7 @@ import com.battlenex.Connection;
 import com.battlenex.Server;
 import com.battlenex.game.players.PacketType;
 import com.battlenex.game.players.Player;
+import com.battlenex.game.minigames.TriviaBot;
 import com.battlenex.game.players.PlayerHandler;
 import com.battlenex.game.players.PlayerSave;
 import com.battlenex.game.settings.Constants;
@@ -70,6 +71,18 @@ public class Commands implements PacketType {
 		if (playerCommand.startsWith("empty") && playerCommand.length() > 5) {
 	         	c.getItems().removeAllItems();
 		}
+		
+		/* Trivia Bot Command */
+		//Start
+		
+		if(playerCommand.startsWith("trivia") || playerCommand.startsWith("Trivia") || playerCommand.startsWith("TRIVIA")){
+			String triviaAnswer = playerCommand.substring(7);
+			if(TriviaBot.acceptingQuestion()){
+				TriviaBot.attemptAnswer(c, triviaAnswer);
+			}
+		}
+		
+		//End
 		
 		if (playerCommand.startsWith("info") && playerCommand.length() > 4) {
 	             String playerInfo = playerCommand.substring(5);

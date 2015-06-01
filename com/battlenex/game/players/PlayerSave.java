@@ -98,6 +98,8 @@ public class PlayerSave {
 						p.teleBlockLength = Integer.parseInt(token2);
 					} else if (token.equals("pc-points")) {
 						p.pcPoints = Integer.parseInt(token2);
+					} else if (token.equals("trivia-points")) {
+						p.triviaPoints = Integer.parseInt(token2);
 					} else if (token.equals("slayerTask")) {
 						p.slayerTask = Integer.parseInt(token2);
 					} else if (token.equals("taskAmount")) {
@@ -316,6 +318,10 @@ public class PlayerSave {
 			characterfile.write("pc-points = ", 0, 12);
 			characterfile.write(Integer.toString(p.pcPoints), 0, Integer
 					.toString(p.pcPoints).length());
+			characterfile.newLine();
+			characterfile.write("trivia-points = ", 0, 12);
+			characterfile.write(Integer.toString(p.triviaPoints), 0, Integer
+					.toString(p.triviaPoints).length());
 			characterfile.newLine();
 			characterfile.write("slayerTask = ", 0, 13);
 			characterfile.write(Integer.toString(p.slayerTask), 0, Integer
